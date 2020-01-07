@@ -23,7 +23,6 @@ map.on('load', function() {
                     issLastSeen = data.features[0].geometry.coordinates,
                     details = data.features[0].properties,
                     resultingDOM = "";
-
                 for (var prop in details) {
                     resultingDOM += "<span class='title'>" + prop.toUpperCase() + "</span>" + " " + details[prop] + "</br>";
                 }
@@ -37,8 +36,8 @@ map.on('load', function() {
                 console.log(error);
             });
 
-    }, 1000);
-
+    }, 2000);
+    console.log(url);
     map.addSource('iss', { type: 'geojson', data: url });
     map.addLayer({
         "id": "iss",
